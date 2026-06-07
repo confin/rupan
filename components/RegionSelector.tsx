@@ -54,7 +54,7 @@ export function RegionSelector({ value, onChange }: {
   return (
     <div className="relative">
       {/* 触发器 */}
-      <button type="button" onClick={() => { setOpen(o => !o); if (!o) setLevel("p"); }}
+      <button type="button" onClick={() => { setOpen(v => { if (!v) setLevel("p"); return !v; }); }}
         className="w-full border-2 border-military-900 bg-sand-50 px-4 py-3 text-left font-bold flex items-center justify-between hover:bg-military-50 transition">
         <span className={`truncate ${!hasCounty ? "text-military-700/50" : "text-military-900"}`}>
           {hasCounty ? "📍 " : "👇 "}{summary}
